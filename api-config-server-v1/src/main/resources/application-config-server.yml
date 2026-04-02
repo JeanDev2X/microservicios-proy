@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/JeanDev2X/microservicios-proy.git
+          search-paths: infra/config-server-properties
+          clone-on-start: true
+          default-label: main
+          username: JeanDev2X
+          #Para generar el token ir a https://github.com/settings/tokens
+          password: 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
+          force-pull: true

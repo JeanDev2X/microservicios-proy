@@ -1,0 +1,55 @@
+# Puerto donde se levantara el Eureka Server
+server:
+  port: 8761
+
+# Configuracion de Eureka para este servidor
+# https://docs.spring.io/spring-cloud-netflix/reference/configprops.html
+eureka:
+  client:
+    # Indica si este servicio debe registrarse en Eureka.
+    #
+    # ➤ false:
+    #   - Cuando el servicio ES el Eureka Server
+    #   - El server no necesita descubrirse a sí mismo
+    #
+    # ➤ true:
+    #   - En TODOS los microservicios clientes (order, payment, etc.)
+    #   - Permite que otros servicios puedan descubrirlo dinámicamente
+    #
+    register-with-eureka: false
+
+    # Indica si este servicio debe consultar el registry de Eureka.
+    #
+    # ➤ false:
+    #   - Cuando el servicio ES el Eureka Server
+    #   - El server solo mantiene el registry, no lo consume
+    #
+    # ➤ true:
+    #   - En microservicios clientes
+    #   - Necesario para descubrir otros servicios (service-to-service calls)
+    #
+    fetch-registry: false
+
+  server:
+    # Mecanismo de autoprotección de Eureka (Self Preservation Mode).
+    #
+    # Cuando está habilitado, Eureka evita eliminar instancias
+    # incluso si dejan de enviar heartbeats,
+    # asumiendo que puede haber un problema de red temporal.
+    #
+    # ➤ false:
+    #   - Entornos de desarrollo y demos
+    #   - Permite ver rápidamente servicios caídos
+    #   - Ideal para mostrar comportamiento real de fallos
+    #
+    # ➤ true:
+    #   - Entornos productivos
+    #   - Evita que un problema de red provoque
+    #     la eliminación masiva de servicios sanos
+    #
+    enable-self-preservation: false
+
+# Nombre de la aplicacion Spring Boot
+spring:
+  application:
+    name: eureka-server

@@ -1,0 +1,162 @@
+version: '3.8'
+
+#Instalar docker y docker-compose
+#Crear network
+#docker network create ms-network-curso
+#Levantar servicios core con el siguiente comando, solo si estamos en la raiz del proyecto:
+# docker-compose --file docker/infra-compose.yml --profile core up
+
+#Levantar servicios si estoy dentro de la cardpeta docker
+# docker-compose --profile core --file infra-compose.yml up
+
+#Depende la version de docker-compose que tengas instalado, puede que necesites usar "docker compose" en lugar de "docker-compose"
+
+services:
+
+  # --- SERVICIOS CORE DE SPRING CLOUD ---
+
+  api-config-server-proy:
+    profiles: ["core"]
+    build:
+      context: ../api-config-server-v1
+      dockerfile: Dockerfile
+    container_name: api-config-server-v1
+    ports:
+      - "8888:8888"
+    networks:
+      - ms-network-proyecto
+
+  api-eureka-server-proy:
+    profiles: ["core"]
+    build:
+      context: ../api-eureka-server-v1
+      dockerfile: Dockerfile
+    container_name: api-eureka-server-v1
+    depends_on:
+      - api-config-server-proy
+    ports:
+      - "8761:8761"
+    networks:
+      - ms-network-proyecto
+
+  # --- BASES DE DATOS POSTGRES ---
+  # Se cambiaron los puertos a la serie 41000 para evitar el bloqueo de Windows (rango 51000 reservado)
+
+  postgres-auth-v1:
+    profiles: ["core"]
+    image: postgres:15
+    container_name: postgres-auth-v1
+    environment:
+      POSTGRES_DB: authdb
+      POSTGRES_USER: authuser
+      POSTGRES_PASSWORD: authpass
+    ports:
+      - "41100:5432"
+    volumes:
+      - auth-db-data-v1:/var/lib/postgresql/data
+    networks:
+      - ms-network-proyecto
+
+  postgres-order-v1:
+    profiles: ["core"]
+    image: postgres:15
+    container_name: postgres-order-v1
+    environment:
+      POSTGRES_DB: orderdb
+      POSTGRES_USER: orderuser
+      POSTGRES_PASSWORD: orderpass
+    ports:
+      - "41110:5432"
+    volumes:
+      - order-db-data-v1:/var/lib/postgresql/data
+    networks:
+      - ms-network-proyecto
+
+  postgres-payment-v1:
+    profiles: ["core"]
+    image: postgres:15
+    container_name: postgres-payment-v1
+    environment:
+      POSTGRES_DB: paymentdb
+      POSTGRES_USER: paymentuser
+      POSTGRES_PASSWORD: paymentpass
+    ports:
+      - "41120:5432"
+    volumes:
+      - payment-db-data-v1:/var/lib/postgresql/data
+    networks:
+      - ms-network-proyecto
+
+  # --- BASE DE DATOS NOSQL (INVENTARIO) ---
+
+  mongodb-inventory-v1:
+    profiles: ["core"]
+    image: mongo:7.0
+    container_name: mongodb-inventory-v1
+    ports:
+      - "41130:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpass
+      MONGO_INITDB_DATABASE: inventorydb
+    volumes:
+      - inventory-db-data-v1:/data/db
+    networks:
+      - ms-network-proyecto
+
+  # --- MENSAJERÍA ---
+
+  zookeeper-proy:
+    profiles: ["core"]
+    image: confluentinc/cp-zookeeper:7.4.0
+    container_name: zookeeper-v1
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+    networks:
+      - ms-network-proyecto
+
+  kafka-proy:
+    profiles: ["core"]
+    image: confluentinc/cp-kafka:7.4.0
+    container_name: kafka-v1
+    depends_on:
+      - zookeeper-proy
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper-v1:2181
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CLIENT:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_LISTENERS: CLIENT://:9092,EXTERNAL://:9093
+      KAFKA_ADVERTISED_LISTENERS: CLIENT://kafka-v1:9092,EXTERNAL://localhost:9093
+      KAFKA_INTER_BROKER_LISTENER_NAME: CLIENT
+    ports:
+      - "9092:9092"
+      - "9093:9093"
+    networks:
+      - ms-network-proyecto
+
+  keycloak-proy:
+    profiles: [ "down" ]
+    image: quay.io/keycloak/keycloak:21.1.1
+    container_name: keycloak-proy-v1
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    command: start-dev
+    ports:
+      - "52020:8080"
+    volumes:
+      - keycloak-data-v1:/opt/keycloak/data
+    restart: unless-stopped
+    networks:
+      - ms-network-proyecto
+
+volumes:
+  auth-db-data-v1:
+  order-db-data-v1:
+  payment-db-data-v1:
+  inventory-db-data-v1:
+  keycloak-data-v1:
+
+networks:
+  ms-network-proyecto:
+    external: true
