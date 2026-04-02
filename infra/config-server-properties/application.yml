@@ -1,0 +1,13 @@
+http-clients:
+  internal:
+    api-order-service-proy:
+      # Si corres el microservicio desde el IDE, usa localhost:60010
+      # Si lo corres en Docker, usa api-order-service-proy:8080
+      base-url: http://localhost:60010/api/v1/orders
+      timeout: 5s
+    api-payment-service-proy:
+      base-url: http://localhost:60020/api/v1/payments
+      timeout: 5s
+    api-inventory-service-proy:
+      base-url: http://localhost:60030/api/v1/inventory # <-- Corregido aquí
+      timeout: 5s
