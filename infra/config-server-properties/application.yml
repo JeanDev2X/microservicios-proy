@@ -11,3 +11,8 @@ http-clients:
     api-inventory-service-proy:
       base-url: http://localhost:60030/api/v1/inventory # <-- Corregido aquí
       timeout: 5s
+  external:
+    visa:
+      base-url: http://api-visa-service-v1:8080/api/visa # Si lo corres en Docker
+      # base-url: http://localhost:52010/api/visa     # Si lo corres en el IDE
+      timeout: 2s

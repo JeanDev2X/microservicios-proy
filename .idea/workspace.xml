@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="601d2f7b-1512-492f-b5b6-73777dd84c1b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/api-auth-service-v1/src/main/java/com/mitocode/auth/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-auth-service-v1/src/main/java/com/mitocode/auth/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-auth-service-v1/src/main/java/com/mitocode/auth/controller/dto/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-auth-service-v1/src/main/java/com/mitocode/auth/controller/dto/RefreshRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-auth-service-v1/src/main/java/com/mitocode/auth/controller/dto/RegisterRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-auth-service-v1/src/main/java/com/mitocode/auth/controller/dto/TokenResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-auth-service-v1/src/main/java/com/mitocode/auth/controller/dto/ValidateRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-auth-service-v1/src/main/java/com/mitocode/auth/controller/dto/ValidateResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-auth-service-v1/src/main/java/com/mitocode/auth/entity/UserEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-auth-service-v1/src/main/java/com/mitocode/auth/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-auth-service-v1/src/main/java/com/mitocode/auth/service/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-auth-service-v1/src/main/java/com/mitocode/auth/service/CustomUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-auth-service-v1/src/main/java/com/mitocode/auth/util/JwtUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-auth-service-v1/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-inventory-service-v1/src/main/java/com/mitocode/inventory/infraestructure/document/ProductDocument.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-inventory-service-v1/src/main/java/com/mitocode/inventory/infraestructure/repository/DataSetup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-inventory-service-v1/src/main/java/com/mitocode/inventory/infraestructure/repository/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-inventory-service-v1/src/main/java/com/mitocode/inventory/listener/order/created/event/OrderCreatedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-inventory-service-v1/src/main/java/com/mitocode/inventory/listener/payment/completed/PaymentCompletedListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-inventory-service-v1/src/main/java/com/mitocode/inventory/listener/payment/completed/event/PaymentCompletedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-inventory-service-v1/src/main/java/com/mitocode/inventory/producer/stock/failed/StockOperationFailedProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-inventory-service-v1/src/main/java/com/mitocode/inventory/producer/stock/failed/event/StockOperationFailedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-inventory-service-v1/src/main/java/com/mitocode/inventory/producer/stock/reserved/StockReservedProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-inventory-service-v1/src/main/java/com/mitocode/inventory/producer/stock/reserved/event/StockReservedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-inventory-service-v1/src/main/java/com/mitocode/inventory/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-inventory-service-v1/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-order-service-v1/src/main/java/com/mitocode/order/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-order-service-v1/src/main/java/com/mitocode/order/controller/dto/OrderRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-order-service-v1/src/main/java/com/mitocode/order/infraestructure/entity/OrderEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-order-service-v1/src/main/java/com/mitocode/order/infraestructure/repository/OrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-order-service-v1/src/main/java/com/mitocode/order/listener/inventory/failed/InventoryFailedListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-order-service-v1/src/main/java/com/mitocode/order/listener/inventory/failed/event/StockOperationFailedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-order-service-v1/src/main/java/com/mitocode/order/listener/inventory/reserved/InventoryReservedListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-order-service-v1/src/main/java/com/mitocode/order/listener/inventory/reserved/event/InventoryReservedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-order-service-v1/src/main/java/com/mitocode/order/listener/payment/failed/PaymentFailedListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-order-service-v1/src/main/java/com/mitocode/order/listener/payment/failed/event/PaymentFailedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-order-service-v1/src/main/java/com/mitocode/order/producer/order/created/OrderCreatedProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-order-service-v1/src/main/java/com/mitocode/order/producer/order/created/event/OrderCreatedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-order-service-v1/src/main/java/com/mitocode/order/service/saga/OrderSagaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-order-service-v1/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-payment-service-v1/src/main/java/com/mitocode/payment/client/config/RestClientConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-payment-service-v1/src/main/java/com/mitocode/payment/client/dto/VisaRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-payment-service-v1/src/main/java/com/mitocode/payment/client/dto/VisaResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-payment-service-v1/src/main/java/com/mitocode/payment/client/restclient/VisaRestClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-payment-service-v1/src/main/java/com/mitocode/payment/controller/PaymentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-payment-service-v1/src/main/java/com/mitocode/payment/infraestructure/entity/PaymentEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-payment-service-v1/src/main/java/com/mitocode/payment/infraestructure/repository/PaymentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-payment-service-v1/src/main/java/com/mitocode/payment/listener/inventory/failed/StockFailedListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-payment-service-v1/src/main/java/com/mitocode/payment/listener/inventory/failed/event/StockOperationFailedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-payment-service-v1/src/main/java/com/mitocode/payment/listener/order/created/OrderCreatedListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-payment-service-v1/src/main/java/com/mitocode/payment/listener/order/created/event/OrderCreatedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-payment-service-v1/src/main/java/com/mitocode/payment/producer/payment/completed/PaymentCompletedProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-payment-service-v1/src/main/java/com/mitocode/payment/producer/payment/completed/event/PaymentCompletedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-payment-service-v1/src/main/java/com/mitocode/payment/producer/payment/failed/PaymentFailedProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-payment-service-v1/src/main/java/com/mitocode/payment/producer/payment/failed/event/PaymentFailedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-payment-service-v1/src/main/java/com/mitocode/payment/service/PaymentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-payment-service-v1/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-proy/infra-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-proy/infra-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/config-server-properties/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/config-server-properties/application.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_D:/MitoCode/Microservicios/repo_proyecto" value="3Bz0GjYyPfKSrWXx8d4vP38FiRQ" />
+    </persistenceIdMap>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "jhingx1"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/JeanDev2X/microservicios-proy.git",
+    "accountId": "76988173-f47c-4998-a081-e8cd8b1c28b4"
+  }
+}]]></component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="3Bz0GjYyPfKSrWXx8d4vP38FiRQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.ApiAuthServiceV1Application.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/MitoCode/Microservicios/repo_proyecto/api-auth-service-v1/src/main/java/com/mitocode/auth/controller/dto"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\MitoCode\Microservicios\repo_proyecto\api-auth-service-v1\src\main\java\com\mitocode\auth\controller\dto" />
+      <recent name="D:\MitoCode\Microservicios\repo_proyecto\api-auth-service-v1\src\main\java\com\mitocode\auth\controller" />
+      <recent name="D:\MitoCode\Microservicios\repo_proyecto\api-auth-service-v1\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ApiAuthServiceV1Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
+      <module name="api-auth-service-v1" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.mitocode.auth.ApiAuthServiceV1Application" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mitocode.auth.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.ApiAuthServiceV1Application" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="601d2f7b-1512-492f-b5b6-73777dd84c1b" name="Changes" comment="" />
+      <created>1775476500353</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1775476500353</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>

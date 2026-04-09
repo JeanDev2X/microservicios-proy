@@ -4,7 +4,7 @@ version: '3.8'
 #Crear network
 #docker network create ms-network-curso
 #Levantar servicios core con el siguiente comando, solo si estamos en la raiz del proyecto:
-# docker-compose --file docker/infra-compose.yml --profile core up
+# docker-compose --file docker-proy/infra-compose.yml --profile core up
 
 #Levantar servicios si estoy dentro de la cardpeta docker
 # docker-compose --profile core --file infra-compose.yml up
@@ -87,6 +87,17 @@ services:
     networks:
       - ms-network-proyecto
 
+  api-visa-service-v1:
+    profiles: [ "core" ]
+    build:
+      context: ../api-visa-service-v1
+      dockerfile: Dockerfile
+    container_name: api-visa-service-v1
+    ports:
+      - "52010:52010"
+    networks:
+      - ms-network-proyecto
+
   # --- BASE DE DATOS NOSQL (INVENTARIO) ---
 
   mongodb-inventory-v1:
@@ -101,6 +112,7 @@ services:
       MONGO_INITDB_DATABASE: inventorydb
     volumes:
       - inventory-db-data-v1:/data/db
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
     networks:
       - ms-network-proyecto
 
@@ -128,6 +140,10 @@ services:
       KAFKA_LISTENERS: CLIENT://:9092,EXTERNAL://:9093
       KAFKA_ADVERTISED_LISTENERS: CLIENT://kafka-v1:9092,EXTERNAL://localhost:9093
       KAFKA_INTER_BROKER_LISTENER_NAME: CLIENT
+      # AGREGA ESTO:
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
     ports:
       - "9092:9092"
       - "9093:9093"

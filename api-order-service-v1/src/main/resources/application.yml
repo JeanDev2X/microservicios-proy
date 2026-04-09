@@ -1,0 +1,47 @@
+server:
+  port: 60010
+  servlet:
+    context-path: /api/v1
+
+spring:
+  application:
+    name: api-order-service-v1 # Nombre estándar para Eureka
+
+  # Base de Datos PostgreSQL
+  datasource:
+    # Puerto 41110 según tu configuración de Docker para postgres-order-v1
+    url: jdbc:postgresql://localhost:41110/orderdb
+    username: orderuser
+    password: orderpass
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        format_sql: true
+
+  # --- PIEZA FALTANTE 1: KAFKA ---
+  kafka:
+    bootstrap-servers: localhost:9093 # Asegúrate que sea el mismo que Payment
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: order-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      auto-offset-reset: earliest
+
+# --- PIEZA FALTANTE 2: EUREKA ---
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true

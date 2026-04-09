@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -9,12 +10,30 @@
         <module name="api-config-server-v1" />
         <module name="api-eureka-server-v1" />
       </profile>
+      <profile name="Annotation profile for api-auth-service-v1" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar" />
+        </processorPath>
+        <module name="api-visa-service-v1" />
+        <module name="api-auth-service-v1" />
+        <module name="api-order-service-v1" />
+        <module name="api-inventory-service-v1" />
+        <module name="api-payment-service-v1" />
+      </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api-auth-service-v1" options="-parameters" />
       <module name="api-config-server-v1" options="-parameters" />
       <module name="api-eureka-server-v1" options="-parameters" />
+      <module name="api-inventory-service-v1" options="-parameters" />
+      <module name="api-order-service-v1" options="-parameters" />
+      <module name="api-payment-service-v1" options="-parameters" />
+      <module name="api-visa-service-v1" options="-parameters" />
     </option>
   </component>
 </project>

@@ -4,8 +4,13 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
+        <option value="$PROJECT_DIR$/api-auth-service-v1/pom.xml" />
+        <option value="$PROJECT_DIR$/api-visa-service-v1/pom.xml" />
         <option value="$PROJECT_DIR$/api-config-server-v1/pom.xml" />
         <option value="$PROJECT_DIR$/api-eureka-server-v1/pom.xml" />
+        <option value="$PROJECT_DIR$/api-order-service-v1/pom.xml" />
+        <option value="$PROJECT_DIR$/api-payment-service-v1/pom.xml" />
+        <option value="$PROJECT_DIR$/api-inventory-service-v1/pom.xml" />
       </list>
     </option>
   </component>

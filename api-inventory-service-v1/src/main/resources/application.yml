@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: api-inventory-service-v1
+  mongodb:
+    uri: mongodb://inventory_user:inventory_pass@localhost:41130/inventorydb
+    database: inventorydb
+  kafka:
+    bootstrap-servers: localhost:9093 # Usamos 9093 porque en tu Docker es el puerto EXTERNAL
+    consumer:
+      group-id: inventory-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+server:
+  port: 60030
+  servlet:
+    context-path: /api/v1
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true

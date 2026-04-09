@@ -1,0 +1,60 @@
+server:
+  port: 60020
+  servlet:
+    context-path: /api/v1
+
+spring:
+  application:
+    name: api-payment-service-v1
+  cloud:
+    config:
+      enabled: false
+      import-check:
+        enabled: false
+
+  # Configuración de Base de Datos PostgreSQL
+  datasource:
+    # Puerto 41120 según tu configuración de Docker para postgres-payment-v1
+    url: jdbc:postgresql://localhost:41120/paymentdb
+    username: paymentuser
+    password: paymentpass
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        format_sql: true
+
+  # Configuración de Kafka (Productor para avisar que el pago se completó)
+  kafka:
+    bootstrap-servers: localhost:9093
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    # Si este servicio también escucha mensajes, añade aquí el bloque consumer
+
+# Configuración de Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      visaService: # Nombre de nuestra instancia
+        registerHealthIndicator: true
+        slidingWindowSize: 10 # Mira las últimas 10 llamadas
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowType: COUNT_BASED
+        minimumNumberOfCalls: 5 # Espera a tener al menos 5 llamadas para decidir
+        failureRateThreshold: 50 # Si el 50% falla, abre el circuito
+        waitDurationInOpenState: 10s # Espera 10 segundos antes de intentar de nuevo

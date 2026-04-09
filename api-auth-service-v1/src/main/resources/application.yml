@@ -1,0 +1,35 @@
+server:
+  port: 50300
+  servlet:
+    context-path: /api/v1/auth
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+spring:
+  application:
+    name: api-auth-service-v1
+  profiles:
+    active: dev, oauth2-github
+
+  datasource:
+    url: jdbc:postgresql://localhost:41100/authdb
+    username: authuser
+    password: authpass
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        format_sql: true
+jwt:
+  secret: my-secret-key-for-jwt-generation-mitocode-123456789012345
+  expiration: 1h
+  refresh-expiration: 7d
