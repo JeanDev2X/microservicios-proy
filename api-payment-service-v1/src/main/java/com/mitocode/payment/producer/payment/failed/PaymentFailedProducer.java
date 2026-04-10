@@ -15,7 +15,7 @@ public class PaymentFailedProducer {
         this.objectMapper = objectMapper;
     }
 
-    public void send(PaymentFailedEvent event) {
+    public void     send(PaymentFailedEvent event) {
         try {
             String message = objectMapper.writeValueAsString(event);
             kafkaTemplate.send("payment-failed-topic", message);

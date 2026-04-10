@@ -20,7 +20,7 @@ public class StockFailedListener {
     @KafkaListener(topics = "stock-failed-topic", groupId = "payment-group")
     public void onStockFailed(String message) {
         try {
-            // Ahora sí, esta línea funcionará perfectamente
+
             StockOperationFailedEvent event = objectMapper.readValue(message, StockOperationFailedEvent.class);
 
             System.err.println("Reintentando compensación para Orden: " + event.getOrderId() +
@@ -30,7 +30,7 @@ public class StockFailedListener {
             paymentService.processRefund(event.getOrderId());
 
         } catch (Exception e) {
-            System.err.println("❌ Error al procesar el rollback de pago: " + e.getMessage());
+            System.err.println("Error al procesar el rollback de pago: " + e.getMessage());
         }
     }
 

@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="601d2f7b-1512-492f-b5b6-73777dd84c1b" name="Changes" comment="" />
+    <list default="true" id="601d2f7b-1512-492f-b5b6-73777dd84c1b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/api-inventory-service-v1/src/main/java/com/mitocode/inventory/listener/payment/failed/PaymentFailedListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-inventory-service-v1/src/main/java/com/mitocode/inventory/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-inventory-service-v1/src/main/java/com/mitocode/inventory/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-payment-service-v1/src/main/java/com/mitocode/payment/listener/inventory/failed/StockFailedListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-payment-service-v1/src/main/java/com/mitocode/payment/listener/inventory/failed/StockFailedListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-payment-service-v1/src/main/java/com/mitocode/payment/producer/payment/failed/PaymentFailedProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-payment-service-v1/src/main/java/com/mitocode/payment/producer/payment/failed/PaymentFailedProducer.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,6 +87,7 @@
       <recent name="D:\MitoCode\Microservicios\repo_proyecto\api-auth-service-v1\src\main\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.mitocode.inventory.listener.payment.failed" />
       <recent name="com.mitocode.inventory.controller" />
       <recent name="com.mitocode.inventory.config.security" />
       <recent name="com.mitocode.payment.config.security" />
@@ -90,7 +98,7 @@
       <recent name="com.mitocode.payment.config.security" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.ApiOrderServiceV1Application">
+  <component name="RunManager" selected="Spring Boot.ApiPaymentServiceV1Application">
     <configuration name="ApiAuthServiceV1Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
       <module name="api-auth-service-v1" />
@@ -149,9 +157,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.ApiPaymentServiceV1Application" />
         <item itemvalue="Spring Boot.ApiOrderServiceV1Application" />
         <item itemvalue="Spring Boot.ApiAuthServiceV1Application" />
-        <item itemvalue="Spring Boot.ApiPaymentServiceV1Application" />
         <item itemvalue="Spring Boot.ApiInventoryServiceV1Application" />
       </list>
     </recent_temporary>

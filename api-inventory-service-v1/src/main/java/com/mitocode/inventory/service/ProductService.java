@@ -35,4 +35,13 @@ public class ProductService {
         productRepository.save(product);
     }
 
+    public void restoreStock(String productId, int quantity) {
+        ProductDocument product = productRepository.findByProductId(productId)
+                .orElseThrow(() -> new RuntimeException("Producto no encontrado"));
+
+        // Sumamos el stock que se había restado previamente
+        product.setStock(product.getStock() + quantity);
+        productRepository.save(product);
+    }
+
 }
