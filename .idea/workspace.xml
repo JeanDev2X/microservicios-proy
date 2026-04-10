@@ -4,30 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="601d2f7b-1512-492f-b5b6-73777dd84c1b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/api-inventory-service-v1/src/main/java/com/mitocode/inventory/config/security/JwtAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-inventory-service-v1/src/main/java/com/mitocode/inventory/config/security/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-inventory-service-v1/src/main/java/com/mitocode/inventory/config/security/jwtlocal/JwtUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-inventory-service-v1/src/main/java/com/mitocode/inventory/controller/InventoryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-order-service-v1/src/main/java/com/mitocode/order/config/security/JwtAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-order-service-v1/src/main/java/com/mitocode/order/config/security/OpenApiConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-order-service-v1/src/main/java/com/mitocode/order/config/security/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-order-service-v1/src/main/java/com/mitocode/order/config/security/jwtlocal/JwtUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-payment-service-v1/src/main/java/com/mitocode/payment/config/security/JwtAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-payment-service-v1/src/main/java/com/mitocode/payment/config/security/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-payment-service-v1/src/main/java/com/mitocode/payment/config/security/jwtlocal/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-inventory-service-v1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-inventory-service-v1/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-inventory-service-v1/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-inventory-service-v1/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-order-service-v1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-order-service-v1/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-order-service-v1/src/main/java/com/mitocode/order/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-order-service-v1/src/main/java/com/mitocode/order/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-order-service-v1/src/main/java/com/mitocode/order/service/saga/OrderSagaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-order-service-v1/src/main/java/com/mitocode/order/service/saga/OrderSagaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-order-service-v1/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-order-service-v1/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-payment-service-v1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-payment-service-v1/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-payment-service-v1/src/main/java/com/mitocode/payment/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-payment-service-v1/src/main/java/com/mitocode/payment/controller/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-payment-service-v1/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-payment-service-v1/src/main/resources/application.yml" afterDir="false" />
-    </list>
+    <list default="true" id="601d2f7b-1512-492f-b5b6-73777dd84c1b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

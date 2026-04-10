@@ -1,0 +1,165 @@
+{
+  "info": {
+    "_postman_id": "98d9f2d8-722c-449e-add7-5be434b94aa7",
+    "name": "MitoMicroservicios_JP",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "4730391"
+  },
+  "item": [
+    {
+      "name": "http://localhost:60030/api/v1/inventory/validate/P001?quantity=501",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:60030/api/v1/inventory/validate/P001?quantity=501",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "60030",
+          "path": [
+            "api",
+            "v1",
+            "inventory",
+            "validate",
+            "P001"
+          ],
+          "query": [
+            {
+              "key": "quantity",
+              "value": "501"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:60010/api/v1/orders",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtaXRvIiwiaWF0IjoxNzc1ODE1MDgwLCJleHAiOjE3NzU4MTg2ODAsInJvbGVzIjpbIlVTRVIiLCJBRE1JTiJdfQ.YXINOQaQSh-WhSQde8VSjlzVuS1OcQ6B6ZtbE8LqHs8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"productId\": \"P001\",\r\n    \"quantity\": 1,\r\n    \"amount\": 10.0\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:60010/api/v1/orders",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "60010",
+          "path": [
+            "api",
+            "v1",
+            "orders"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:50300/api/v1/auth/register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\": \"mito\",\r\n  \"password\": \"123\",\r\n  \"email\": \"mito@code.com\",\r\n  \"roles\": [\"USER\", \"ADMIN\"]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:50300/api/v1/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "50300",
+          "path": [
+            "api",
+            "v1",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:50300/api/v1/auth/login",
+      "request": {
+        "auth": {
+          "type": "basic"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\": \"mito\",\r\n  \"password\": \"123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:50300/api/v1/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "50300",
+          "path": [
+            "api",
+            "v1",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:60020/api/v1/pago-test",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:60020/api/v1/pago-test",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "60020",
+          "path": [
+            "api",
+            "v1",
+            "pago-test"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
