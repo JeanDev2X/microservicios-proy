@@ -7,6 +7,9 @@ import com.mitocode.order.producer.order.created.event.OrderCreatedEvent;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class OrderSagaService {
     private final OrderRepository orderRepository;
@@ -41,4 +44,16 @@ public class OrderSagaService {
 
         return savedOrder;
     }
+
+    @Transactional(readOnly = true)
+    public List<OrderEntity> getAllOrders() {
+        return orderRepository.findAll();
+    }
+
+    @Transactional(readOnly = true)
+    public Optional<OrderEntity> getOrderById(String orderId) {
+        // Buscamos por el orderId (UUID) que es el que manejas en la Saga
+        return orderRepository.findByOrderId(orderId);
+    }
+
 }

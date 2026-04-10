@@ -10,7 +10,7 @@
         <module name="api-config-server-v1" />
         <module name="api-eureka-server-v1" />
       </profile>
-      <profile name="Annotation profile for api-auth-service-v1" enabled="true">
+      <profile name="Annotation profile for API Order Service V1" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />

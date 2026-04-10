@@ -28,3 +28,5 @@ eureka:
     fetch-registry: true
   instance:
     prefer-ip-address: true
+jwt:
+  secret: my-secret-key-for-jwt-generation-mitocode-123456789012345

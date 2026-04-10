@@ -58,3 +58,5 @@ resilience4j:
         minimumNumberOfCalls: 5 # Espera a tener al menos 5 llamadas para decidir
         failureRateThreshold: 50 # Si el 50% falla, abre el circuito
         waitDurationInOpenState: 10s # Espera 10 segundos antes de intentar de nuevo
+jwt:
+  secret: my-secret-key-for-jwt-generation-mitocode-123456789012345
